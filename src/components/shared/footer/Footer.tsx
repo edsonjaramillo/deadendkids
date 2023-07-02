@@ -4,12 +4,15 @@ import Logo from '@/components/shared/Logo';
 import SocicalIcon, { socials } from '@/components/shared/SocialIcon';
 import FooterLink from '@/components/shared/footer/FooterLink';
 import FooterSection from '@/components/shared/footer/FooterSection';
+import { CMSClient } from '@/utils/cms/CMSClient';
 
 function getYear() {
   return new Date().getFullYear();
 }
 
 export default async function Footer() {
+  const blogPosts = await new CMSClient().getRecentBlogPosts();
+
   return (
     <footer className="bg-base-950">
       <div className="responsive py-12 pb-8">
@@ -34,7 +37,9 @@ export default async function Footer() {
             <FooterLink href="/legal/terms" title="Terms of Service" />
           </FooterSection>
           <FooterSection title="Latest Blogs">
-            <FooterLink href="blog/example1" title="Example 1" />
+            {blogPosts.map((post) => (
+              <FooterLink key={post.slug} href={`/blog/${post.slug}`} title={post.title} />
+            ))}
           </FooterSection>
         </nav>
 
