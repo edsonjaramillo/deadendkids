@@ -1,3 +1,71 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.responsive {
+  margin: auto;
+  width: min(90%, 76rem);
+}
+
+.responsive-sm {
+  margin: auto;
+  width: min(90%, 60rem);
+}
+
+@layer components {
+  .animate {
+    @apply transition-all duration-[350ms] ease-linear;
+  }
+
+  .animated-link {
+    @apply transition duration-500 ease-in-out hover:text-base-400;
+  }
+
+  .close-mobile-menu {
+    @apply bg-blue-50;
+  }
+
+  .input-error {
+    @apply bg-base text-toast-error placeholder-toast-error ring-toast-error;
+  }
+
+  .input-default {
+    @apply bg-base text-base-400 ring-base-600;
+  }
+
+  .bg-base {
+    @apply bg-base-900;
+  }
+
+  .base-text {
+    @apply text-white;
+  }
+
+  body {
+    @apply bg-base-900 text-white;
+  }
+
+  .btn {
+    @apply rounded-md text-sm font-semibold shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600;
+  }
+
+  .btn-responsive {
+    @apply rounded-md text-xs font-semibold shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600 sm:text-sm;
+  }
+
+  .focus {
+    @apply focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600;
+  }
+
+  .grid-portrait {
+    @apply aspect-h-2 aspect-w-1;
+  }
+
+  .grid-landscape {
+    @apply aspect-h-1 aspect-w-2;
+  }
+
+  .grid-square {
+    @apply aspect-h-1 aspect-w-1;
+  }
+}
