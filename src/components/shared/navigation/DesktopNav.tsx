@@ -3,7 +3,7 @@ import Link from 'next/link';
 import Logo from '@/components/shared/Logo';
 import { links } from '@/data/links';
 
-export default function DesktopNav({}) {
+export default function DesktopNav() {
   return (
     <nav className="bg-base hidden md:block" aria-label="Desktop">
       <div className="responsive flex h-16 items-center">
