@@ -1,14 +1,9 @@
-import Link from 'next/link';
-
 import Logo from '@/components/shared/Logo';
 import SocicalIcon, { socials } from '@/components/shared/SocialIcon';
 import FooterLink from '@/components/shared/footer/FooterLink';
 import FooterSection from '@/components/shared/footer/FooterSection';
+import { Datetime } from '@/utils/DateTime';
 import { CMSClient } from '@/utils/cms/CMSClient';
-
-function getYear() {
-  return new Date().getFullYear();
-}
 
 export default async function Footer() {
   const blogPosts = await new CMSClient().getRecentBlogPosts();
@@ -16,11 +11,7 @@ export default async function Footer() {
   return (
     <footer className="bg-base-950">
       <div className="responsive py-12 pb-8">
-        <Link href="/" legacyBehavior>
-          <a>
-            <Logo />
-          </a>
-        </Link>
+        <Logo />
         <nav aria-label="Footer" className="mt-4 grid grid-cols-2 gap-4 md:grid-cols-3 lg:mt-8 lg:grid-cols-4 lg:gap-8">
           <FooterSection title="Creativity">
             <FooterLink href="/music" title="Music" />
@@ -42,7 +33,6 @@ export default async function Footer() {
             ))}
           </FooterSection>
         </nav>
-
         <div className="mt-8 border-t border-white/10 pt-8 md:flex md:items-center md:justify-between">
           <nav aria-label="Social Media Links" className="flex space-x-4 md:order-2">
             {socials.map((social) => (
@@ -52,7 +42,7 @@ export default async function Footer() {
             ))}
           </nav>
           <p className="text-xs leading-5 text-base-400 mt-4 md:mt-0">
-            &copy; {getYear()} Dead End Kids. All rights reserved.
+            &copy; {Datetime.getYear()} Dead End Kids. All rights reserved.
           </p>
         </div>
       </div>
