@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   category: 'website',
   themeColor: '#171717',
   viewport: 'width=device-width, initial-scale=1',
-  metadataBase: new URL('https://deadendkids.com/'),
+  metadataBase: new URL('https://deadendkidsmusic.com/'),
   publisher: 'Dead End Kids',
 };
 
