@@ -9,9 +9,7 @@ export default function MobileNav() {
   return (
     <nav className="relative md:hidden" aria-label="Mobile">
       <div className="responsive flex h-16 items-center justify-between">
-        <Link href="/">
-          <Logo />
-        </Link>
+        <Logo />
         <HamburgerIcon />
         <ExitIcon />
       </div>
