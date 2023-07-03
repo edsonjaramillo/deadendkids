@@ -32,10 +32,11 @@ export default async function BlogPostPage({ params }: PageProps) {
   const authorName = `${blogPost.bandMember.firstName} ${blogPost.bandMember.lastName}`;
   const releasedDate = Datetime.getFormattedDate(blogPost.releaseDate);
   const jsonld = JSONLD.getBlogPost(blogPost);
+
   return (
     <>
       <JSONLDScript data={jsonld} />
-      <div className="responsive-sm space-y-12 py-14">
+      <div className="responsive-sm space-y-10 py-14">
         <div className="grid md:grid-cols-2 gap-10">
           <div className="space-y-6">
             <h1 className="text-4xl font-bold">{blogPost.title}</h1>
