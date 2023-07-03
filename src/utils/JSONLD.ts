@@ -1,11 +1,12 @@
 import {
+  BlogPosting,
   MusicAlbum as MusicAlbumLD,
   MusicEvent as MusicEventLD,
   MusicGroup as MusicGroupLD,
   WithContext,
 } from 'schema-dts';
 
-import { Album, Show } from '@/types/cms';
+import { Album, BlogPost, Show } from '@/types/cms';
 
 export class JSONLD {
   static getMusicGroup(): WithContext<MusicGroupLD> {
@@ -66,5 +67,22 @@ export class JSONLD {
     };
 
     return jsonld;
+  }
+
+  static getBlogPost(blog: BlogPost): WithContext<BlogPosting> {
+    const authorName = `${blog.bandMember.firstName} ${blog.bandMember.lastName}`;
+
+    return {
+      '@context': 'https://schema.org',
+      '@type': 'BlogPosting',
+      url: `https://deadendkidsmusic.com/blog/${blog.slug}`,
+      datePublished: blog.releaseDate,
+      dateModified: blog.updatedAt,
+      headline: blog.title,
+      description: blog.description,
+      author: { '@type': 'Person', name: authorName },
+      articleBody: blog.article.text,
+      wordCount: blog.article.text.split(' ').length,
+    };
   }
 }

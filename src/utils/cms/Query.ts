@@ -125,6 +125,7 @@ export class Query {
         blogPost(where: {slug: $slug}) {
           id
           title
+          slug
           description
           updatedAt
           releaseDate
@@ -145,6 +146,7 @@ export class Query {
           }
           article {
             json
+            text
           }
         }
       }
