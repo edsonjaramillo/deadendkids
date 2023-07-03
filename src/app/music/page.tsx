@@ -1,7 +1,20 @@
+import { Metadata } from 'next';
+
 import MusicCard from '@/components/music/MusicCard';
 import PageHeader from '@/components/shared/PageHeader';
 import Section from '@/components/shared/Section';
+import { SEO } from '@/utils/SEO';
 import { CMSClient } from '@/utils/cms/CMSClient';
+
+export async function generateMetadata(): Promise<Metadata> {
+  return SEO.setMetadata({
+    title: 'Music',
+    description:
+      'Join the movement of fans who love our raw and powerful music. Stream our latest release and experience the power of punk rock.',
+    route: '/music',
+    index: true,
+  });
+}
 
 export default async function MusicPage() {
   const client = new CMSClient();
