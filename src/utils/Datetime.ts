@@ -4,7 +4,7 @@ export class Datetime {
     return new Date(date).toLocaleDateString('en-US', opts);
   }
 
-  static getYear() {
-    return new Date().getFullYear();
+  static getYear(date?: string) {
+    return date ? new Date(date).getFullYear() : new Date().getFullYear();
   }
 }
