@@ -2,7 +2,7 @@ import Logo from '@/components/shared/Logo';
 import SocicalIcon, { socials } from '@/components/shared/SocialIcon';
 import FooterLink from '@/components/shared/footer/FooterLink';
 import FooterSection from '@/components/shared/footer/FooterSection';
-import { Datetime } from '@/utils/DateTime';
+import { Datetime } from '@/utils/Datetime';
 import { CMSClient } from '@/utils/cms/CMSClient';
 
 export default async function Footer() {
