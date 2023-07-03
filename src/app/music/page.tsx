@@ -3,7 +3,7 @@ import PageHeader from '@/components/shared/PageHeader';
 import Section from '@/components/shared/Section';
 import { CMSClient } from '@/utils/cms/CMSClient';
 
-export default async function Page() {
+export default async function MusicPage() {
   const client = new CMSClient();
   const aPromise = client.getAlbums();
   const sPromise = client.getSingles();

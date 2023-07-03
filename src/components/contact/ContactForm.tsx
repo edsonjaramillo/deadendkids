@@ -1,14 +1,14 @@
 'use client';
 
 import { zodResolver } from '@hookform/resolvers/zod';
-import { SubmitErrorHandler, SubmitHandler, useForm } from 'react-hook-form';
+import { FieldErrors, useForm } from 'react-hook-form';
 import { toast } from 'react-toastify';
 import { z } from 'zod';
 
 import { Input, TextAreaInput } from '@/components/contact/Inputs';
 import { contactPageFormSchema as schema } from '@/forms/schema';
 
-const ContactForm = () => {
+export default function ContactForm() {
   type schemaType = z.infer<typeof schema>;
 
   const {
@@ -17,13 +17,15 @@ const ContactForm = () => {
     formState: { errors },
   } = useForm<schemaType>({ resolver: zodResolver(schema) });
 
-  const onSubmit: SubmitHandler<schemaType> = () => {
+  function onSubmit<T extends schemaType>(formData: T) {
+    // TODO: Send form data to email service
     toast.success('Form submitted successfully');
-  };
+  }
 
-  const onError: SubmitErrorHandler<schemaType> = () => {
+  function onError(formData: FieldErrors<schemaType>) {
+    // TODO: Create error toast with response from email service
     toast.error('Form submission failed');
-  };
+  }
 
   return (
     <form onSubmit={handleSubmit(onSubmit, onError)} className="flex flex-col gap-3 px-6 lg:px-8 lg:py-48 py-8">
@@ -69,6 +71,4 @@ const ContactForm = () => {
       </button>
     </form>
   );
-};
-
-export default ContactForm;
+}
