@@ -24,8 +24,8 @@ export default async function Footer() {
             <FooterLink href="/blog" title="Blog" />
           </FooterSection>
           <FooterSection title="Legal">
-            <FooterLink href="/legal/privacy" title="Privacy Policy" />
-            <FooterLink href="/legal/terms" title="Terms of Service" />
+            <FooterLink href="/privacy" title="Privacy Policy" />
+            <FooterLink href="/terms" title="Terms of Service" />
           </FooterSection>
           <FooterSection title="Latest Blogs">
             {blogPosts.map((post) => (
