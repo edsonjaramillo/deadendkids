@@ -33,7 +33,7 @@ export default function Renderer({ content }: RendererProps) {
 
           if (isInternal) {
             return (
-              <Link className="text-base text-primary-500 hover:underline" href={link}>
+              <Link className="text-base text-primary-500 underline" href={link}>
                 {children}
               </Link>
             );
@@ -43,7 +43,7 @@ export default function Renderer({ content }: RendererProps) {
             <a
               rel="noopener nofollow noreferrer external"
               target="_blank"
-              className="text-base text-primary-500 hover:underline"
+              className="text-base text-primary-500 underline"
               href={link}>
               {children}
             </a>
