@@ -31,7 +31,7 @@ export function Input({ register, label, name, placeholder, errors, required, ..
           {...rest}
           id={name}
           name={name}
-          className={`${inputClass} block w-full rounded-md px-3.5 py-2 pr-10 ring-1 ring-inset focus:ring-2 focus:ring-inset sm:text-sm sm:leading-6`}
+          className={`${inputClass} block w-full rounded-md px-3.5 py-2 pr-10 ring-1 ring-inset focus:ring-2 focus:ring-inset sm:text-sm sm:leading-6 appearance-none`}
           placeholder={placeholder}
           aria-invalid={errors ? 'true' : 'false'}
           aria-label={`${name}-error`}
@@ -61,7 +61,7 @@ export function TextAreaInput({ register, label, name, placeholder, errors, requ
           {...rest}
           id={name}
           name={name}
-          className={`${inputClass} block w-full rounded-md px-2 py-1.5 pr-10 ring-1 ring-inset focus:ring-2 focus:ring-inset sm:text-sm sm:leading-6`}
+          className={`${inputClass} block w-full rounded-md px-2 py-1.5 pr-10 ring-1 ring-inset focus:ring-2 focus:ring-inset sm:text-sm sm:leading-6 appearance-none`}
           placeholder={placeholder}
           aria-invalid={errors ? 'true' : 'false'}
           aria-label={`${name}-error`}
