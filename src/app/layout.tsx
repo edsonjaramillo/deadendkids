@@ -15,6 +15,12 @@ type RootLayoutProps = {
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
+  openGraph: {
+    type: 'website',
+    siteName: 'Dead End Kids',
+    description: 'Dead End Kids Logo',
+    images: ['https://media.graphassets.com/PMjGFrheTKa5DHYhZvIB'],
+  },
   category: 'website',
   themeColor: '#171717',
   viewport: 'width=device-width, initial-scale=1',
