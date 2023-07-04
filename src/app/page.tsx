@@ -1,8 +1,8 @@
 import { Metadata } from 'next';
 
+import CTA from '@/components/home/CTA';
+import Newsletter from '@/components/home/Newsletter';
 import { SEO } from '@/utils/SEO';
-
-type HomeProps = {};
 
 export async function generateMetadata(): Promise<Metadata> {
   return SEO.setMetadata({
@@ -14,6 +14,11 @@ export async function generateMetadata(): Promise<Metadata> {
   });
 }
 
-export default function Home({}: HomeProps) {
-  return <div>Home</div>;
+export default function HomePage() {
+  return (
+    <>
+      <CTA />
+      <Newsletter />
+    </>
+  );
 }
