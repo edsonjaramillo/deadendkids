@@ -16,7 +16,7 @@ export default function ShowCard({ show, isPastShow }: ShowCardProps) {
   return (
     <>
       <JSONLDScript data={jsonld} />
-      <article className={'flex py-2' + (isPastShow && ' line-through')}>
+      <article className={'flex py-2 w-full' + (isPastShow && ' line-through')}>
         {/* left side date info */}
         <div className="flex min-w-[7rem] sm:min-w-[8rem] flex-col text-xs sm:text-sm">
           <span className="font-semibold">{startDate}</span>
@@ -32,7 +32,7 @@ export default function ShowCard({ show, isPastShow }: ShowCardProps) {
 
         {/* right side ticket info and website infor */}
 
-        <div className="flex flex-col md:flex-row gap-1">
+        <div className="flex flex-col md:flex-row gap-1 ml-auto">
           {!isPastShow && show.ticketsUrl && (
             <a
               rel="noopener nofollow noreferrer external"
