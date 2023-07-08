@@ -3,12 +3,12 @@ import { Metadata } from 'next';
 import PageHeader from '@/components/shared/PageHeader';
 import Section from '@/components/shared/Section';
 import ShowCard from '@/components/shows/ShowCard';
-// import PageHeader from '@/components/shared/PageHeader';
-// import Section from '@/components/shared/Section';
-// import Show from '@/components/shows/Show';
 import { Show } from '@/types/cms';
+import { Datetime } from '@/utils/Datetime';
 import { SEO } from '@/utils/SEO';
 import { CMSClient } from '@/utils/cms/CMSClient';
+
+export const revalidate = Datetime.getSecondsToMidnight();
 
 export async function generateMetadata(): Promise<Metadata> {
   return SEO.setMetadata({ title: 'Shows', description: 'Meet Dead End Kids', route: '/shows', index: true });

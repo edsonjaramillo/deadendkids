@@ -7,4 +7,11 @@ export class Datetime {
   static getYear(date?: string) {
     return date ? new Date(date).getFullYear() : new Date().getFullYear();
   }
+
+  static getSecondsToMidnight() {
+    const now = new Date();
+    const tomorrow = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 1);
+    const diff = tomorrow.getTime() - now.getTime();
+    return Math.floor(diff / 1000);
+  }
 }
