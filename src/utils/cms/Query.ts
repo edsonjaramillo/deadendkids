@@ -157,6 +157,7 @@ export class Query {
     return `
       query getBlogPostSlugs {
         blogPosts {
+          title
           slug
         }
       }
