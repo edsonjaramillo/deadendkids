@@ -22,11 +22,11 @@ export class ShowFmt {
 
   //   returns day of week and time as Fri • 7:00pm
   private getDayOfWeekAndTime(startDate: Date) {
-    const dayOfWeekOpt = Intl.DateTimeFormat('en-US', { weekday: 'short' });
+    const dayOfWeekOpt = Intl.DateTimeFormat('en-US', { weekday: 'short', timeZone: 'America/Chicago' });
 
     const dayOfWeek = dayOfWeekOpt.format(startDate);
 
-    const timeOptions = Intl.DateTimeFormat('en-US', { timeStyle: 'short' });
+    const timeOptions = Intl.DateTimeFormat('en-US', { timeStyle: 'short', timeZone: 'America/Chicago' });
 
     const time = timeOptions.format(startDate);
 
