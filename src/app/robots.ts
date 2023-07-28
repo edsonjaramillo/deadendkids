@@ -5,6 +5,7 @@ export default function robots(): MetadataRoute.Robots {
     rules: {
       userAgent: '*',
       allow: '/',
+      disallow: ['/revalidate'],
     },
     sitemap: 'https://deadendkidsmusic.com/sitemap.xml',
   };
