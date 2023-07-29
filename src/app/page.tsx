@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+import { getPlaiceholder } from 'plaiceholder';
 
 import CTA from '@/components/home/CTA';
 import Newsletter from '@/components/home/Newsletter';
@@ -17,11 +18,12 @@ export async function generateMetadata(): Promise<Metadata> {
 
 export default async function HomePage() {
   const cta = await new CMSClient().getCTA();
-  console.log('🚀 ~ file: page.tsx:20 ~ HomePage ~ cta:', cta);
+  const buffer = await fetch(cta.image.url).then(async (res) => Buffer.from(await res.arrayBuffer()));
+  const { base64 } = await getPlaiceholder(buffer, { size: 32 });
 
   return (
     <>
-      <CTA cta={cta} />
+      <CTA cta={cta} blurDataURL={base64} />
       <Newsletter />
     </>
   );

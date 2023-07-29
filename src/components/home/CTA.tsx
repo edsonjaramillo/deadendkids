@@ -4,9 +4,10 @@ import Link from 'next/link';
 
 type CTAProps = {
   cta: CTA;
+  blurDataURL: string;
 };
 
-export default function CTA({cta}: CTAProps) {
+export default function CTA({cta,blurDataURL}: CTAProps) {
   return (
     <div className="relative">
       <div className="mx-auto max-w-7xl lg:grid lg:grid-cols-12 lg:gap-x-8 lg:px-8">
@@ -37,6 +38,8 @@ export default function CTA({cta}: CTAProps) {
             alt={cta.image.alt || 'Dead End Kids'}
             width={cta.image.width}
             height={cta.image.height}
+            placeholder='blur'
+            blurDataURL={blurDataURL}
             priority
           />
         </div>
