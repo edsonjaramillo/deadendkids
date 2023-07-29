@@ -3,6 +3,7 @@ import { Metadata } from 'next';
 import CTA from '@/components/home/CTA';
 import Newsletter from '@/components/home/Newsletter';
 import { SEO } from '@/utils/SEO';
+import { CMSClient } from '@/utils/cms/CMSClient';
 
 export async function generateMetadata(): Promise<Metadata> {
   return SEO.setMetadata({
@@ -14,10 +15,13 @@ export async function generateMetadata(): Promise<Metadata> {
   });
 }
 
-export default function HomePage() {
+export default async function HomePage() {
+  const cta = await new CMSClient().getCTA();
+  console.log('🚀 ~ file: page.tsx:20 ~ HomePage ~ cta:', cta);
+
   return (
     <>
-      <CTA />
+      <CTA cta={cta} />
       <Newsletter />
     </>
   );

@@ -1,7 +1,12 @@
+import { CTA } from '@/types/cms';
 import Image from 'next/image';
 import Link from 'next/link';
 
-export default function CTA() {
+type CTAProps = {
+  cta: CTA;
+};
+
+export default function CTA({cta}: CTAProps) {
   return (
     <div className="relative">
       <div className="mx-auto max-w-7xl lg:grid lg:grid-cols-12 lg:gap-x-8 lg:px-8">
@@ -28,10 +33,10 @@ export default function CTA() {
         <div className="relative lg:col-span-5 lg:-mr-8 xl:absolute xl:inset-0 xl:left-1/2 xl:mr-0">
           <Image
             className="lg:aspect-auto aspect-[3/2] w-full bg-base-50 object-cover lg:absolute lg:inset-0 lg:h-full"
-            src="https://media.graphassets.com/9TiUh2A8R8e2cynCmV0M"
-            alt=""
-            width={2102}
-            height={1401}
+            src={cta.image.url}
+            alt={cta.image.alt || 'Dead End Kids'}
+            width={cta.image.width}
+            height={cta.image.height}
             priority
           />
         </div>

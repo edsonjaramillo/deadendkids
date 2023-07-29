@@ -87,3 +87,8 @@ export type Gallery = {
   id: string;
   image: CMSImage;
 };
+
+export type CTA = {
+  id: string;
+  image: CMSImage;
+};

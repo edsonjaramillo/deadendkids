@@ -1,4 +1,19 @@
 export class Query {
+  static getCTA() {
+    return `
+      query CallToActions($id: ID!) {
+        callToAction(where: {id: $id}) {
+          image {
+            width
+            height
+            url
+            altText
+          }
+        }
+      }
+    `;
+  }
+
   static getSingles() {
     return `
       query getSinglesAblums {

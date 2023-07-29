@@ -1,4 +1,4 @@
-import { BandMember, BlogPost, Gallery, Album, Show, Song } from '@/types/cms';
+import { BandMember, BlogPost, Gallery, Album, Show, Song, CTA } from '@/types/cms';
 import { GQLRequest } from '@/utils/cms/GQLRequest';
 import { Query } from '@/utils/cms/Query';
 
@@ -16,6 +16,12 @@ export class CMSClient {
   constructor() {
     const endpoint = process.env.CMS_ENDPOINT as string;
     this.gql = new GQLRequest(endpoint);
+  }
+
+  async getCTA() {
+    const id = 'clkoi4o1y1nb20bipwng0hxic';
+    const { callToAction } = await this.gql.request<Res<CTA>>(Query.getCTA(), { variables: { id } });
+    return callToAction;
   }
 
   async getShows() {
