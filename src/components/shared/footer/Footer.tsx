@@ -6,7 +6,7 @@ import { Datetime } from '@/utils/Datetime';
 import { CMSClient } from '@/utils/cms/CMSClient';
 
 export default async function Footer() {
-  const blogPosts = await new CMSClient().getRecentBlogPosts();
+  // const blogPosts = await new CMSClient().getRecentBlogPosts();
 
   return (
     <footer className="bg-base-950">
@@ -27,11 +27,11 @@ export default async function Footer() {
             <FooterLink href="/privacy" title="Privacy Policy" />
             <FooterLink href="/terms" title="Terms of Service" />
           </FooterSection>
-          <FooterSection title="Latest Blogs">
+          {/* <FooterSection title="Latest Blogs">
             {blogPosts.map((post) => (
               <FooterLink key={post.slug} href={`/blog/${post.slug}`} title={post.title} />
             ))}
-          </FooterSection>
+          </FooterSection> */}
         </nav>
         <div className="mt-8 border-t border-white/10 pt-8 md:flex md:items-center md:justify-between">
           <nav aria-label="Social Media Links" className="flex space-x-4 md:order-2">
