@@ -34,16 +34,20 @@ export default async function Page() {
         header="Shows"
         subHeader="Turn up the volume and feel the adrenaline rush of Dead End Kids live shows. Our music is designed to be experienced at high volume, with driving rhythms, infectious hooks, and anthemic choruses that will have you singing along and pumping your fist."
       />
-      <Section header="Upcoming Shows">
-        {upcomingShows.map((show) => (
-          <ShowCard key={show.id} show={show} />
-        ))}
-      </Section>
-      <Section header="Previous Shows">
-        {previousShows.map((show) => (
-          <ShowCard key={show.id} show={show} isPastShow />
-        ))}
-      </Section>
+      {upcomingShows.length > 0 && (
+        <Section header="Upcoming Shows">
+          {upcomingShows.map((show) => (
+            <ShowCard key={show.id} show={show} />
+          ))}
+        </Section>
+      )}
+      {previousShows.length > 0 && (
+        <Section header="Previous Shows">
+          {previousShows.map((show) => (
+            <ShowCard key={show.id} show={show} isPastShow />
+          ))}
+        </Section>
+      )}
     </>
   );
 }
