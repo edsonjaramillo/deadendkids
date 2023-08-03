@@ -6,7 +6,7 @@ import { Datetime } from '@/utils/Datetime';
 import { CMSClient } from '@/utils/cms/CMSClient';
 
 export default async function Footer() {
-  // const blogPosts = await new CMSClient().getRecentBlogPosts();
+  const blogPosts = await new CMSClient().getRecentBlogPosts();
 
   return (
     <footer className="bg-base-950">
@@ -21,17 +21,19 @@ export default async function Footer() {
           <FooterSection title="Information">
             <FooterLink href="/about" title="About" />
             <FooterLink href="/contact" title="Contact" />
-            <FooterLink href="/blog" title="Blog" />
+            {blogPosts.length > 0 && <FooterLink href="/blog" title="Blog" />}
           </FooterSection>
           <FooterSection title="Legal">
             <FooterLink href="/privacy" title="Privacy Policy" />
             <FooterLink href="/terms" title="Terms of Service" />
           </FooterSection>
-          {/* <FooterSection title="Latest Blogs">
-            {blogPosts.map((post) => (
-              <FooterLink key={post.slug} href={`/blog/${post.slug}`} title={post.title} />
-            ))}
-          </FooterSection> */}
+          {blogPosts.length > 0 && (
+            <FooterSection title="Latest Blogs">
+              {blogPosts.map((post) => (
+                <FooterLink key={post.slug} href={`/blog/${post.slug}`} title={post.title} />
+              ))}
+            </FooterSection>
+          )}
         </nav>
         <div className="mt-8 border-t border-white/10 pt-8 md:flex md:items-center md:justify-between">
           <nav aria-label="Social Media Links" className="flex space-x-4 md:order-2">
