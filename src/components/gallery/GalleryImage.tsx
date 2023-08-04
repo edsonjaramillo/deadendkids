@@ -6,15 +6,28 @@ type GalleryImageProps = {
   gallery: Gallery;
 };
 
+function getAspectRatio(width: number, height: number) {
+  const ratio = width / height;
+
+  if (ratio > 1) {
+    return 'landscape';
+  } else {
+    return 'portrait';
+  }
+}
+
 export default function GalleryImage({ gallery }: GalleryImageProps) {
+  const { image } = gallery;
+  const aspectRatio = getAspectRatio(image.width, image.height);
+
   return (
-    <div className="aspect-w-16 aspect-h-9">
+    <div className={aspectRatio}>
       <Image
         alt={gallery.id}
         src={gallery.image.url}
-        className="object-cover rounded-md w-full"
-        width={gallery.image.width}
-        height={gallery.image.height}
+        className="rounded-md h-full"
+        width={image.width}
+        height={image.height}
         loading="lazy"
       />
     </div>

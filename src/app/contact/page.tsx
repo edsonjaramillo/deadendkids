@@ -11,6 +11,39 @@ export async function generateMetadata() {
   });
 }
 
+function PhoneIcon() {
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" className="fill-white">
+      <path
+        fillRule="evenodd"
+        d="M1.5 4.5a3 3 0 013-3h1.372c.86 0 1.61.586 1.819 1.42l1.105 4.423a1.875 1.875 0 01-.694 1.955l-1.293.97c-.135.101-.164.249-.126.352a11.285 11.285 0 006.697 6.697c.103.038.25.009.352-.126l.97-1.293a1.875 1.875 0 011.955-.694l4.423 1.105c.834.209 1.42.959 1.42 1.82V19.5a3 3 0 01-3 3h-2.25C8.552 22.5 1.5 15.448 1.5 6.75V4.5z"
+        clipRule="evenodd"
+      />
+    </svg>
+  );
+}
+
+function EmailIcon() {
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" className="fill-white">
+      <path d="M1.5 8.67v8.58a3 3 0 003 3h15a3 3 0 003-3V8.67l-8.928 5.493a3 3 0 01-3.144 0L1.5 8.67z" />
+      <path d="M22.5 6.908V6.75a3 3 0 00-3-3h-15a3 3 0 00-3 3v.158l9.714 5.978a1.5 1.5 0 001.572 0L22.5 6.908z" />
+    </svg>
+  );
+}
+
+function LocationIcon() {
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" className="fill-white">
+      <path
+        fillRule="evenodd"
+        d="M7.5 3.75A1.5 1.5 0 006 5.25v13.5a1.5 1.5 0 001.5 1.5h6a1.5 1.5 0 001.5-1.5V15a.75.75 0 011.5 0v3.75a3 3 0 01-3 3h-6a3 3 0 01-3-3V5.25a3 3 0 013-3h6a3 3 0 013 3V9A.75.75 0 0115 9V5.25a1.5 1.5 0 00-1.5-1.5h-6zm5.03 4.72a.75.75 0 010 1.06l-1.72 1.72h10.94a.75.75 0 010 1.5H10.81l1.72 1.72a.75.75 0 11-1.06 1.06l-3-3a.75.75 0 010-1.06l3-3a.75.75 0 011.06 0z"
+        clipRule="evenodd"
+      />
+    </svg>
+  );
+}
+
 export default function ContactPage() {
   return (
     <div className="relative isolate">
@@ -26,30 +59,27 @@ export default function ContactPage() {
             <dl className="mt-10 space-y-4 text-base leading-7">
               <div className="flex gap-x-4">
                 <dt className="flex-none">
-                  <span className="sr-only">Telephone</span>
-                  {/* <BuildingOffice2Icon className="w-6 text-base-400 h-7" aria-hidden="true" /> */}
+                  <LocationIcon />
                 </dt>
                 <dd>Huntsville, AL</dd>
               </div>
               <div className="flex gap-x-4">
                 <dt className="flex-none">
-                  <span className="sr-only">Telephone</span>
-                  {/* <PhoneIcon className="w-6 text-base-400 h-7" aria-hidden="true" /> */}
+                  <PhoneIcon />
                 </dt>
                 <dd>
-                  <a className="hover:text-base-400" href="tel:+1 (555) 234-5678">
-                    +1 (555) 234-5678
+                  <a className="hover:text-base-400 animate" href="tel:2052691766">
+                    (205) 269-1766
                   </a>
                 </dd>
               </div>
               <div className="flex gap-x-4">
                 <dt className="flex-none">
-                  <span className="sr-only">Telephone</span>
-                  {/* <EnvelopeIcon className="w-6 text-base-400 h-7" aria-hidden="true" /> */}
+                  <EmailIcon />
                 </dt>
                 <dd>
-                  <a className="hover:text-base-400" href="mailto:contact@deadendkidsmusic.com">
-                    contact@deadendkidsmusic.com
+                  <a className="hover:text-base-400" href="mailto:matthew_fannin@yahoo.com">
+                    matthew_fannin@yahoo.com
                   </a>
                 </dd>
               </div>

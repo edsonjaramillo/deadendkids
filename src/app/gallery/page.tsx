@@ -25,9 +25,8 @@ export default async function GalleryPage() {
         header="Gallery"
         subHeader="Explore our photo gallery and relive our high-energy performances, backstage antics, and punk rock lifestyle. From sweaty basement shows to packed club gigs, our photos capture the essence of our band and the punk rock scene."
       />
-      {/* create a mosaic grid that takes in all different kinds of sized images with tailwind */}
       <div className="responsive py-16">
-        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
+        <div className="grid gap-4 sm:grid-cols-3 md:grid-cols-5 lg:grid-cols-7">
           {galleries.map((gallery) => (
             <GalleryImage key={gallery.id} gallery={gallery} />
           ))}

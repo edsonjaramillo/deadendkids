@@ -9,7 +9,7 @@ type BandMemberBioProps = {
 export default function BandMemberBio({ bandMember }: BandMemberBioProps) {
   return (
     <article>
-      <div className="aspect-1 overflow-hidden rounded-md">
+      <div className="aspect-w-3 aspect-h-4 overflow-hidden rounded-md">
         <Image
           className="h-full w-full object-cover object-center"
           src={bandMember.image.url}
