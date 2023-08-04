@@ -90,8 +90,8 @@ export default function PrivacyPage() {
       <h2 className="text-3xl font-bold">Contact Us</h2>
       <p className="text-base-400">
         If you have any questions or concerns about this Privacy Policy, please contact us at{' '}
-        <a className="text-base text-primary-500 underline" href="mailto:contact@deadendkidsmusic.com">
-          contact@deadendkidsmusic.com
+        <a className="text-base text-primary-500 underline" href="mailto:matthew_fannin@yahoo.com">
+          matthew_fannin@yahoo.com
         </a>
       </p>
     </div>

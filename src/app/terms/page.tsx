@@ -64,15 +64,9 @@ export default function Page() {
         We may terminate or suspend your access to our services immediately, without prior notice or liability, for any
         reason whatsoever, including but not limited to a breach of these Terms.
       </p>
-      <h2 className="text-3xl font-bold">Governing Law</h2>
-      <p className="text-base-400">
-        These Terms shall be governed by and construed in accordance with the laws of [Jurisdiction]. Any legal action
-        or proceeding arising out of or relating to these Terms shall be exclusively brought in the courts of
-        [Jurisdiction].
-      </p>
       <h2 className="text-3xl font-bold">Contact Us</h2>
       <p className="text-base-400">
-        If you have any questions or concerns about these Terms, please contact us at [email address].
+        If you have any questions or concerns about these Terms, please contact us at matthew_fannin@yahoo.com.
       </p>
     </div>
   );

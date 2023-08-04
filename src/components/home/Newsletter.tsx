@@ -32,7 +32,7 @@ export default function Newsletter() {
     <>
       <Section
         header="Stay up to date with our journey!"
-        subHeader="Reprehenderit ad esse et non officia in nulla. Id proident tempor incididunt nostrud nulla et culpa.">
+        subHeader="Embark on an adventure: Sign up for our newsletter to stay informed and follow our thrilling journey!">
         <form onSubmit={handleSubmit(onSubmit, onError)} aria-label="Band updates signup.">
           <div className="max-w-2xl flex gap-4 justify-center mx-auto">
             <Input register={register} name="email" placeholder="Enter your email" type="text" errors={errors.email} />
