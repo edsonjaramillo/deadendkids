@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     type: 'website',
     siteName: 'Dead End Kids',
     description: 'Dead End Kids Logo',
-    images: ['https://media.graphassets.com/PMjGFrheTKa5DHYhZvIB'],
+    images: ['https://media.graphassets.com/ICK9f34TySthKPmvKpKT'],
   },
   category: 'website',
   themeColor: '#171717',
