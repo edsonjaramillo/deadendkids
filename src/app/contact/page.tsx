@@ -52,7 +52,7 @@ export default function ContactPage() {
           <div className="responsive">
             <SquareSVGBackground />
             <h1 className="text-3xl lg:text-5xl font-bold tracking-tight">Get in touch</h1>
-            <p className="mt-6 text-lg leading-8 ">
+            <p className="mt-6 text-lg leading-8 text-base-400">
               We&apos;d love to hear from you! Whether you have a question, a suggestion, or just want to say hello,
               we&apos;re all ears.
             </p>
