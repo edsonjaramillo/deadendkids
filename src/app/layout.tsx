@@ -18,7 +18,8 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     siteName: 'Dead End Kids',
-    description: 'Dead End Kids Logo',
+    description:
+      'Dead End Kids is a punk rock band from Huntsville, AL. Check out our music, upcoming shows, and more! Follow us on social media for the latest updates.',
     images: ['https://media.graphassets.com/ICK9f34TySthKPmvKpKT'],
   },
   category: 'website',
