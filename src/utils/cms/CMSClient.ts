@@ -30,7 +30,6 @@ class CMSClient {
 
   async getSingles() {
     const { songs } = await this.gql.request<Res<Song[]>>(Query.getSingles());
-    console.log("🚀  CMSClient  getSingles  songs:", songs);
     return songs;
   }
 
