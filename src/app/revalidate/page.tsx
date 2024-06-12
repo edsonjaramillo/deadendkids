@@ -4,7 +4,7 @@ import RevalidateCard from '@/components/revalidate/RevalidateCard';
 import Section from '@/components/shared/Section';
 import { links } from '@/data/links';
 import { SEO } from '@/utils/SEO';
-import { CMSClient } from '@/utils/cms/CMSClient';
+import { cms } from '@/utils/cms/CMSClient';
 
 export async function generateMetadata(): Promise<Metadata> {
   return SEO.setMetadata({
@@ -16,7 +16,7 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default async function Page() {
-  const blogPosts = await new CMSClient().getBlogPostSlugs();
+  const blogPosts = await cms.getBlogPostSlugs();
 
   return (
     <Section header="Revalidate Pages">

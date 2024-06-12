@@ -7,12 +7,12 @@ import JSONLDScript from '@/components/shared/seo/JSONLDScript';
 import { Datetime } from '@/utils/Datetime';
 import { JSONLD } from '@/utils/JSONLD';
 import { SEO } from '@/utils/SEO';
-import { CMSClient } from '@/utils/cms/CMSClient';
+import { cms } from '@/utils/cms/CMSClient';
 
 type PageProps = { params: { slug: string } };
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
-  const blogPost = await new CMSClient().getBlogPostBySlug(params.slug);
+  const blogPost = await cms.getBlogPostBySlug(params.slug);
   return SEO.setMetadata({
     title: blogPost.title,
     description: blogPost.description,
@@ -28,7 +28,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 }
 
 export default async function BlogPostPage({ params }: PageProps) {
-  const blogPost = await new CMSClient().getBlogPostBySlug(params.slug);
+  const blogPost = await cms.getBlogPostBySlug(params.slug);
   const authorName = `${blogPost.bandMember.firstName} ${blogPost.bandMember.lastName}`;
   const releasedDate = Datetime.getFormattedDate(blogPost.releaseDate);
   const jsonld = JSONLD.getBlogPost(blogPost);
@@ -72,6 +72,6 @@ export default async function BlogPostPage({ params }: PageProps) {
 }
 
 export async function generateStaticParams(): Promise<{ slug: string }[]> {
-  const blogPosts = await new CMSClient().getBlogPostSlugs();
+  const blogPosts = await cms.getBlogPostSlugs();
   return blogPosts.map((post) => ({ slug: post.slug }));
 }

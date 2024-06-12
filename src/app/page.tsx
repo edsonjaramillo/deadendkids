@@ -4,7 +4,7 @@ import { getPlaiceholder } from 'plaiceholder';
 import CTA from '@/components/home/CTA';
 import Newsletter from '@/components/home/Newsletter';
 import { SEO } from '@/utils/SEO';
-import { CMSClient } from '@/utils/cms/CMSClient';
+import { cms } from '@/utils/cms/CMSClient';
 
 export async function generateMetadata(): Promise<Metadata> {
   return SEO.setMetadata({
@@ -17,7 +17,7 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default async function HomePage() {
-  const cta = await new CMSClient().getCTA();
+  const cta = await cms.getCTA();
   const buffer = await fetch(cta.image.url).then(async (res) => Buffer.from(await res.arrayBuffer()));
   const { base64 } = await getPlaiceholder(buffer, { size: 32 });
 

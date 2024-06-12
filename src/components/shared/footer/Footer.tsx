@@ -3,10 +3,10 @@ import SocicalIcon, { socials } from '@/components/shared/SocialIcon';
 import FooterLink from '@/components/shared/footer/FooterLink';
 import FooterSection from '@/components/shared/footer/FooterSection';
 import { Datetime } from '@/utils/Datetime';
-import { CMSClient } from '@/utils/cms/CMSClient';
+import { cms } from '@/utils/cms/CMSClient';
 
 export default async function Footer() {
-  const blogPosts = await new CMSClient().getRecentBlogPosts();
+  const blogPosts = await cms.getRecentBlogPosts();
 
   return (
     <footer className="bg-base-950">

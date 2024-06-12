@@ -4,7 +4,7 @@ import BandMemberBio from '@/components/about/BandMemberBio';
 import PageHeader from '@/components/shared/PageHeader';
 import Section from '@/components/shared/Section';
 import { SEO } from '@/utils/SEO';
-import { CMSClient } from '@/utils/cms/CMSClient';
+import { cms } from '@/utils/cms/CMSClient';
 
 export async function generateMetadata(): Promise<Metadata> {
   return SEO.setMetadata({
@@ -17,7 +17,7 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default async function AboutPage() {
-  const bandMembers = await new CMSClient().getBandMembers();
+  const bandMembers = await cms.getBandMembers();
 
   return (
     <>

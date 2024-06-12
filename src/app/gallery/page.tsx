@@ -3,7 +3,7 @@ import { Metadata } from 'next';
 import GalleryImage from '@/components/gallery/GalleryImage';
 import PageHeader from '@/components/shared/PageHeader';
 import { SEO } from '@/utils/SEO';
-import { CMSClient } from '@/utils/cms/CMSClient';
+import { cms } from '@/utils/cms/CMSClient';
 
 export async function generateMetadata(): Promise<Metadata> {
   return SEO.setMetadata({
@@ -17,7 +17,7 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default async function GalleryPage() {
-  const galleries = await new CMSClient().getGalleries();
+  const galleries = await cms.getGalleries();
 
   return (
     <>

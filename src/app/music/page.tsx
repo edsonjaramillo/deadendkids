@@ -4,7 +4,7 @@ import MusicCard from '@/components/music/MusicCard';
 import PageHeader from '@/components/shared/PageHeader';
 import Section from '@/components/shared/Section';
 import { SEO } from '@/utils/SEO';
-import { CMSClient } from '@/utils/cms/CMSClient';
+import { cms } from '@/utils/cms/CMSClient';
 
 export async function generateMetadata(): Promise<Metadata> {
   return SEO.setMetadata({
@@ -17,7 +17,7 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default async function MusicPage() {
-  const client = new CMSClient();
+  const client = cms;
   const aPromise = client.getAlbums();
   const sPromise = client.getSingles();
 

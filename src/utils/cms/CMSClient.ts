@@ -1,5 +1,5 @@
-import { BandMember, BlogPost, Gallery, Album, Show, Song, CTA } from '@/types/cms';
-import { GQLRequest } from '@/utils/cms/GQLRequest';
+import type { BandMember, BlogPost, Gallery, Album, Show, Song, CTA } from '@/types/cms';
+import { GQLRequest, gqlClient } from '@/utils/cms/GQLRequest';
 import { Query } from '@/utils/cms/Query';
 
 type AllPages = {
@@ -11,11 +11,10 @@ type Res<T> = {
   [key: string]: T;
 };
 
-export class CMSClient {
+class CMSClient {
   gql: GQLRequest;
   constructor() {
-    const endpoint = process.env.CMS_ENDPOINT as string;
-    this.gql = new GQLRequest(endpoint);
+    this.gql = gqlClient
   }
 
   async getCTA() {
@@ -31,6 +30,7 @@ export class CMSClient {
 
   async getSingles() {
     const { songs } = await this.gql.request<Res<Song[]>>(Query.getSingles());
+    console.log("🚀  CMSClient  getSingles  songs:", songs);
     return songs;
   }
 
@@ -76,3 +76,6 @@ export class CMSClient {
     return galleries;
   }
 }
+
+
+export const cms = new CMSClient();

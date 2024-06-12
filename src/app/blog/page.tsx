@@ -4,7 +4,7 @@ import BlogPostCard from '@/components/blog/BlogPostCard';
 import PageHeader from '@/components/shared/PageHeader';
 import Section from '@/components/shared/Section';
 import { SEO } from '@/utils/SEO';
-import { CMSClient } from '@/utils/cms/CMSClient';
+import { cms } from '@/utils/cms/CMSClient';
 
 export async function generateMetadata(): Promise<Metadata> {
   return SEO.setMetadata({
@@ -16,7 +16,7 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default async function BlogPage() {
-  const posts = await new CMSClient().getBlogPosts();
+  const posts = await cms.getBlogPosts();
 
   return (
     <>

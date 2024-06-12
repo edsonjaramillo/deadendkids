@@ -20,3 +20,5 @@ export class GQLRequest {
     return json.data as T;
   }
 }
+
+export const gqlClient = new GQLRequest(process.env.CMS_ENDPOINT as string);

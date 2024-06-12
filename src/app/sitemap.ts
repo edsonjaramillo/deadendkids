@@ -1,6 +1,6 @@
 import { MetadataRoute } from 'next';
 
-import { CMSClient } from '@/utils/cms/CMSClient';
+import { cms } from '@/utils/cms/CMSClient';
 
 const coreRoutes = ['/', '/about', '/contact', '/gallery', '/music', '/privacy', '/shows', '/terms'];
 
@@ -10,7 +10,7 @@ export const revalidate = 60 * 60 * 24 * 14;
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = 'https://deadendkidsmusic.com';
   const pages: MetadataRoute.Sitemap = [];
-  const { blogPosts } = await new CMSClient().getAllPages();
+  const { blogPosts } = await cms.getAllPages();
 
   //   adds all the core pages to the sitemap
   coreRoutes.forEach((route) => {

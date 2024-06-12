@@ -6,7 +6,7 @@ import ShowCard from '@/components/shows/ShowCard';
 import { Show } from '@/types/cms';
 import { Datetime } from '@/utils/Datetime';
 import { SEO } from '@/utils/SEO';
-import { CMSClient } from '@/utils/cms/CMSClient';
+import { cms } from '@/utils/cms/CMSClient';
 
 export const revalidate = Datetime.getSecondsToMidnight();
 
@@ -15,7 +15,7 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default async function Page() {
-  const shows = await new CMSClient().getShows();
+  const shows = await cms.getShows();
   const previousShows: Show[] = [];
   const upcomingShows: Show[] = [];
 
